@@ -97,7 +97,7 @@ void drawLine() {
 void drawText() { // draws the texts on the screen
   
   pushMatrix();
-  if(iDistance>100) {
+  if(iDistance>40) {
   noObject = "Out of Range";
   }
   else {
