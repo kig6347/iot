@@ -1,0 +1,19 @@
+#include "Servo.h"               // 서보모터를 사용하기 위한 헤더파일 호출
+#define servo_motor 2// 서보모터 Signal 핀, 아두이노 우노 보드 디지털 3번 핀에 연결
+
+Servo servo;// 서보모터 객체 선언
+int angle =90;
+
+void setup()  // 초기화
+{
+  Serial.begin(115200); // 통신속도 설정
+  servo.attach(servo_motor);  // 서보모터 핀 설정
+  servo.write(angle);  // 서보모터 초기값 90도 설정
+}
+void loop() // 무한루프
+{
+  char data = Serial.read(); // 입력 받은 값을 변수에 저장
+  servo.write(data);
+  Serial.write("%c",data); 
+  }
+}
